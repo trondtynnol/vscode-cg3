@@ -2,7 +2,7 @@
     "name": "cg3",
     "displayName": "cg3",
     "description": "The CG3 language to define Constraint Grammars",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "mit",
     "engines": {
         "vscode": "^1.8.0"
