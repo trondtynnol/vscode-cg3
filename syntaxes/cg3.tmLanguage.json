@@ -1,0 +1,126 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "cg3",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#keywords" },
+		{ "include": "#lexicons" },
+		{ "include": "#end" },
+		{ "include": "#options" },
+		{ "include": "#constants" },
+		{ "include": "#strings"}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.number-sign.cg3",
+				"match": "#.*"
+			}]
+		},
+		"keywords": {
+			"patterns": [
+				{ 
+					"name": "meta.other.cg3",
+					"match": "(^|[( ])(ALL|AND|BARRIER|CBARRIER|DELIMITERS|END|IF|IFF|LINK|LIST|MAPPING-PREFIX|NEGATE|NONE|NOT|PREFERRED-TARGETS|REMOVE|SELECT|SET|SETCHILD|SETPARENT|SOFT-DELIMITERS|STATIC-SETS|STRICT-TAGS|TARGET|TEMPLATE|TEXT-DELIMITERS|TO|MATCH|EXECUTE)([ :]|$)",
+					"captures": {
+						"2": { "name": "keyword.operator.cg3" }
+					}
+				},
+				{ 
+					"name": "meta.operator.cg3",
+					"match": "(^|[( ])(ADD|ADDRELATION|ADDRELATIONS|APPEND|COPY|DELIMIT|EXTERNAL|ADDCOHORT|REMCOHORT|SPLITCOHORTS|MERGECOHORTS|MOVE|SWITCH|REMRELATION|REMRELATIONS|REPLACE|SETRELATION|SETRELATIONS|SUBSTITUTE|SETVARIABLE|REMVARIABLE|MAP|UNMAP|PROTECT|UNPROTECT|RESTORE)([ :]|$)",
+					"captures": {
+						"2": { "name": "keyword.operator.cg3" }
+					}
+				},
+				{ 
+					"name": "meta.flags.cg3",
+					"match": "(^|[( ])(WITHCHILD|NOCHILD|OUTPUT|DELAYED|IGNORED|IMMEDIATE)([ :]|$)",
+					"captures": {
+						"2": { "name": "keyword.operator.flags.cg3" }
+					}
+				},
+				{ 
+					"name": "meta.grammar.cg3",
+					"match": "(^|[( ])(AFTER-SECTIONS|BEFORE-SECTIONS|CONSTRAINTS|CORRECTIONS|INCLUDE|MAPPINGS|NULL-SECTION|OPTIONS|REOPEN-MAPPINGS|SECTION|SETS)([ :]|$)",
+					"captures": {
+						"2": { "name": "entity.name.section.cg3" }
+					}
+				},
+				{ 
+					"name": "meta.contexttests.cg3",
+					"match": "(^|[( ])(NEGATE|CBARRIER)([ :]|$)",
+					"captures": {
+						"2": { "name": "keyword.operator.cg3" }
+					}
+				},
+				{
+					"name": "meta.control.cg3",
+					"match": "(^|[ ])(JUMP|ANCHOR)([ ]|$)",
+					"captures": {
+						"2": { "name": "keyword.control.cg3" }
+					}
+				},
+				{
+					"name": "meta.setoperator.cg3",
+					"match": "(^|[ ])(OR|\\||-|\\\\|∆|∩|\\+|\\^)([ ]|$)",
+					"captures": {
+						"2": { "name": "keyword.operator.cg3" }
+					}
+				}
+				
+			]
+		},
+		"options": {
+			"patterns": [
+				{
+					"name": "support.constant.options.cg3",
+					"match": "\\b(no-inline-sets|no-inline-templates|strict-wordforms|strict-baseforms|strict-secondary|strict-regex|strict-icaseself-no-barrier)\\b"
+				},
+				{
+					"name": "support.constant.ruleoptions.cg3",
+					"match": "\\b(NEAREST|ALLOWLOOP|ALLOWCROSS|DELAYED|IMMEDIATE|IGNORED|LOOKDELAYED|LOOKIGNORED|LOOKDELETED|UNMAPLAST|UNSAFE|SAFE|REMEMBERX|RESETX|KEEPORDER|VARYORDER|ENCL_INNER|ENCL_OUTER|ENCL_FINAL|ENCL_ANY|WITHCHILD|NOCHILD|ITERATE|NOITERATE|REVERSE|SUB:([0-9]+|/N|\\*)|OUTPUT|REPEAT)\\b"
+				}
+			]	
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.magictag.cg3",
+					"match": "\\b(_LEFT_|_RIGHT_|_ENCL_|_PAREN_)\\b"
+				},
+				{
+					"name": "constant.language.magicset.cg3",
+					"match": "\\b(_TARGET_|_MARK_|_ATTACHTO_|_SAME_BASIC_|_S_DELIMITERS_|_S_SOFT_DELIMITERS_)\\b"
+				},
+				{
+					"name": "meta.specialanchors.cg3",
+					"match": "(^|[ ])(JUMP) +(START|END)([ ]|$)",
+					"captures": {
+						"3":{ "name": "constant.language.specialanchors.cg3" }
+					}
+				}
+			]
+		},
+		"sentenceBorders": {
+			"patterns": [
+				{
+					"name": "constant.language.sentenceborder.cg3",
+					"match": "(<<<|>>>)"
+				}
+			]
+		},
+		"end": {
+			"begin": "^ *END\\b\\s*\\n?",
+			"beginCaptures": { "0": { "name": "keyword.control.cg3" } },
+			"contentName": "comment.block.documentation.cg3",
+			"end": "\\z"
+		},
+		"strings": {
+			"name": "string.quoted.double.cg3",
+			"begin": "\"",
+			"end": "\""
+		}
+	},
+	"scopeName": "source.cg3"
+}
