@@ -1,42 +1,48 @@
 {
-    "name": "cg3",
-    "displayName": "cg3",
-    "description": "The CG3 language to define Constraint Grammars",
-    "version": "0.0.2",
-    "license": "mit",
-    "engines": {
-        "vscode": "^1.8.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/trondtynnol/vscode-cg3.git"
-    },
-    "publisher": "trondtynnol",
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "cg3",
-                "aliases": [
-                    "cg",
-                    "cg2"
-                ],
-                "extensions": [
-                    ".cg3",
-                    ".cg2",
-                    ".cg"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "cg3",
-                "scopeName": "source.cg3",
-                "path": "./syntaxes/cg3.tmLanguage.json"
-            }
-        ]
-    }
+	"name": "cg3",
+	"displayName": "cg3",
+	"description": "The CG3 language to define Constraint Grammars",
+	"version": "0.0.2",
+	"license": "mit",
+	"engines": {
+		"vscode": "^1.8.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/trondtynnol/vscode-cg3.git"
+	},
+	"publisher": "trondtynnol",
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "cg3",
+				"aliases": [
+					"cg",
+					"cg2"
+				],
+				"extensions": [
+					".cg3",
+					".cg2",
+					".cg"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cg3",
+				"scopeName": "source.cg3",
+				"path": "./syntaxes/cg3.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "3b307c00-0654-443a-b5c9-629b187aaefc",
+		"publisherDisplayName": "trondtynnol",
+		"publisherId": "a237de9e-020c-4718-a274-8db26a3968ab",
+		"isPreReleaseVersion": false
+	}
 }
